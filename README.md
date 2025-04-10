@@ -45,36 +45,41 @@ Haskell:
 let key = caesar "abcdefghijklmnopqrstuvwxyz" 3
 let encoded = encode key "hello"
 -- encoded will be "khoor"
+```
 
 Decode a Message
 Use the decode function to decode a message with a given key.
 
-Haskell:
+```
 let decoded = decode key "khoor"
 -- decoded will be "hello"
+```
 
 Frequency Analysis
 Analyze the frequency of characters in a string or file:
 
+```
 let text = "some example text"
 let frequencyTable = count text
 -- frequencyTable will be a list of characters and their frequencies
-
 ```
+
 Cryptanalysis (Greedy Algorithm)
 Use the greedy function to perform cryptanalysis on a ciphertext based on a frequency model (English letter frequencies):
-
+```
 let model = loadFrequencyTable "english_freq.txt"
 let ciphertext = "gsv jfrxp yildm ulc"
 let bestKey = greedy model ciphertext initialKey
 -- bestKey will be the most likely decryption key
+```
 
 Dictionary-based Cryptanalysis
 Use a dictionary of valid words to improve decryption:
 
+```
 let dictionary = loadDictionary "dictionary.txt"
 let bestKey = greedyDict dictionary ciphertext initialKey
 -- bestKey will be the decryption key that maximizes the number of valid words
-
+```
 
 
